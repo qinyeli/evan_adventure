@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D),typeof(PlatformerMotor2D))]
 public class Player : MonoBehaviour {
 
-	public int countItem;
+	public int countCorn = 0;
+	public int countFood = 0;
 
 	void Start () {
 		
@@ -16,8 +17,13 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.layer == LayerMask.NameToLayer("Item")) {
-			countItem++;
+		if (collider.gameObject.layer == LayerMask.NameToLayer("Collectable")) {
+			if (collider.gameObject.tag == "Corn") {
+				countCorn ++;
+			}
+			if (collider.gameObject.tag == "Food") {
+				countFood ++;
+			}
 			Destroy(collider.gameObject);
 		}
 	}
