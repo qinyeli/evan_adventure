@@ -60,11 +60,13 @@ public class PlatformerMotor2D : MonoBehaviour
     /// is used to calculate the acceleration.
     /// </summary>
     public float timeToGroundSpeed = 0.1f;
+    private float _defaultTimeToGroundSpeed;
 
     /// <summary>
     /// The distance the motor will slide to a stop from full speed while on the ground.
     /// </summary>
     public float groundStopDistance = 0.333f;
+    private float _defaultGroundStopDistance;
 
     /// <summary>
     /// The maximum horizontal speed of the motor in the air.
@@ -918,6 +920,11 @@ public class PlatformerMotor2D : MonoBehaviour
 
     private void Start()
     {
+        // Added by Qinye Li 2018-01-30
+        _defaultTimeToGroundSpeed = timeToGroundSpeed;
+        _defaultGroundStopDistance = groundStopDistance;
+        // ----------------------------
+
         _previousLoc = _collider2D.bounds.center;
         motorState = MotorState.Falling;
         _wallJumpVector = Quaternion.AngleAxis(wallJumpAngle, Vector3.forward) * Vector3.right;
@@ -1234,6 +1241,20 @@ public class PlatformerMotor2D : MonoBehaviour
 
     private void UpdateState(bool forceSurroundingsCheck)
     {
+        // Added by Qinye Li 2018-01-30
+        if (HasFlag(CollidedSurface.Ground))
+        {
+            PhysicsModifier physicsModifier = _collidersUpAgainst[DIRECTION_DOWN].gameObject.GetComponent<PhysicsModifier>();
+            if (physicsModifier != null) {
+                timeToGroundSpeed = physicsModifier.timeToGroundSpeed;
+                groundStopDistance = physicsModifier.groundStopDistance;
+            } else {
+                timeToGroundSpeed = _defaultTimeToGroundSpeed;
+                groundStopDistance = _defaultGroundStopDistance;
+            }
+        }
+        // ----------------------------
+
         // Since this is in UpdateState, we can end dashing if the timer is at 0.
         if (motorState == MotorState.Dashing && _dashing.dashingFrames <= 0)
         {
