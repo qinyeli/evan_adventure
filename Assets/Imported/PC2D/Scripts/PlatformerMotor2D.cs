@@ -137,6 +137,13 @@ public class PlatformerMotor2D : MonoBehaviour
     /// </summary>
     public float jumpWindowWhenActivated = 0.2f;
 
+    // Added by Qinye Li 2018-01-30
+    public float waterSpeed = 3f;
+    public float waterSwimSpeed = 10f;
+    public float timeToWaterSpeed = 1f;
+    public float waterStopDistance = 1f;
+    // ----------------------------
+
     /// <summary>
     /// Should the motor check for any slopes? Set this to false if there are no slopes, the motor will be more efficient.
     /// </summary>

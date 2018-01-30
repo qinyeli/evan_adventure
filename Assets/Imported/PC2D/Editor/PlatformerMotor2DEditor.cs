@@ -27,6 +27,7 @@ public class PlatformerMotor2DEditor : Editor
     private static bool _showMovement;
     private static bool _showSlopes;
     private static bool _showJumping;
+    private static bool _showSwimming;
     private static bool _showWallInteractions;
     private static bool _showDashing;
     private static bool _showInformation;
@@ -56,6 +57,13 @@ public class PlatformerMotor2DEditor : Editor
     private readonly Property FAST_FALL_GRAVITY_MULTIPLIER = new Property(
         "fastFallGravityMultiplier",
         "Fast Fall Gravity Multiplier");
+
+    // Added by Qinye Li 2018-01-30
+    private readonly Property WATER_SPEED = new Property("waterSpeed", "Water Speed");
+    private readonly Property WATER_SWIM_SPEED = new Property("waterSwimSpeed", "Water Swim Speed");
+    private readonly Property TIME_TO_WATER_SPEED = new Property("timeToWaterSpeed", "Time to Water Speed");
+    private readonly Property WATER_STOP_DISTANCE = new Property("waterStopDistance", "Water StopDistance");
+    // ----------------------------
 
     private readonly Property ENABLE_SLOPES = new Property("enableSlopes", "Enable Slopes");
 
@@ -197,6 +205,18 @@ public class PlatformerMotor2DEditor : Editor
 
             EditorGUILayout.Separator();
         }
+
+        // Added by Qinye Li 2018-01-30
+        _showSwimming = EditorGUILayout.Foldout(_showSwimming, "Swimming");
+
+        if (_showSwimming)
+        {
+            DisplayRegularField(WATER_SPEED);
+            DisplayRegularField(WATER_SWIM_SPEED);
+            DisplayRegularField(TIME_TO_WATER_SPEED);
+            DisplayRegularField(WATER_STOP_DISTANCE);
+        }
+        // ----------------------------
 
         _showSlopes = EditorGUILayout.Foldout(_showSlopes, "Slopes");
 
