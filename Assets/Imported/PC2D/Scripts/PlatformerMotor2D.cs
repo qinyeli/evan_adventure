@@ -1248,6 +1248,14 @@ public class PlatformerMotor2D : MonoBehaviour
 
     private void UpdateState(bool forceSurroundingsCheck)
     {
+        // Since this is in UpdateState, we can end dashing if the timer is at 0.
+        if (motorState == MotorState.Dashing && _dashing.dashingFrames <= 0)
+        {
+            EndDash();
+        }
+
+        UpdateSurroundings(forceSurroundingsCheck);
+
         // Added by Qinye Li 2018-01-30
         if (HasFlag(CollidedSurface.Ground))
         {
@@ -1261,14 +1269,6 @@ public class PlatformerMotor2D : MonoBehaviour
             }
         }
         // ----------------------------
-
-        // Since this is in UpdateState, we can end dashing if the timer is at 0.
-        if (motorState == MotorState.Dashing && _dashing.dashingFrames <= 0)
-        {
-            EndDash();
-        }
-
-        UpdateSurroundings(forceSurroundingsCheck);
 
         if (motorState == MotorState.Dashing)
         {
