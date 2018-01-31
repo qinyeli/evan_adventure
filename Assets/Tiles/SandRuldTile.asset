@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: SnowRuleTile
+  m_Name: SandRuldTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 7e0ca4ee81f24419cbe29a7c6bcbf1e5, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: 17f811079cbe4475a9563eed4a725508, type: 3}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Neighbors: 0000000002000000000000000200000001000000000000000200000000000000
     m_Sprites:
-    - {fileID: 21300000, guid: 313633c489c344f968c93c235fa57ebf, type: 3}
+    - {fileID: 21300000, guid: c7abb917cec1e4f95a214320d4c8e23a, type: 3}
     - {fileID: 21300000, guid: 09a7fdf84b53d4587b1cb3850ba533ea, type: 3}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -26,7 +26,7 @@ MonoBehaviour:
     m_RandomTransform: 0
   - m_Neighbors: 0000000002000000000000000100000002000000000000000200000000000000
     m_Sprites:
-    - {fileID: 21300000, guid: 3890c7e6e7f2c4e46b4d9ca2ec46228b, type: 3}
+    - {fileID: 21300000, guid: 14fbb4fe731a246508eecd21e5f3da41, type: 3}
     - {fileID: 21300000, guid: 59f57caaaa3374c29be1957ad5e0d8d3, type: 3}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_RandomTransform: 0
   - m_Neighbors: 0000000002000000000000000000000000000000000000000000000000000000
     m_Sprites:
-    - {fileID: 21300000, guid: 4221966526082470cb5c72f0d2ee7180, type: 3}
+    - {fileID: 21300000, guid: 65cb3e5f723564fce9f217cd7e0e7736, type: 3}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
     m_RuleTransform: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     m_RandomTransform: 0
   - m_Neighbors: 0000000000000000000000000000000000000000000000000000000000000000
     m_Sprites:
-    - {fileID: 21300000, guid: 12be69472bd0d478887fe1cc26e2301e, type: 3}
+    - {fileID: 21300000, guid: adaed76d3148d43a6a80c3c48ede760a, type: 3}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
     m_RuleTransform: 0
