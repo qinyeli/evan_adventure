@@ -37,7 +37,7 @@ public class BGMPlayer : MonoBehaviour {
 			Destroy(gameObject);
 			return;
 		}
-
+		instance = this;
 		DontDestroyOnLoad(gameObject);
 
 		if (musicAudioClip != null) {
