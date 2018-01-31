@@ -1807,7 +1807,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1830,7 +1830,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 465444099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.789339, y: -2.2962441, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1995,6 +1995,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &512419464 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019508285177708, guid: 2e4985331985d43999c2fc280d2438d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1673392821}
+--- !u!210 &512419465
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512419464}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &528968595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,6 +6504,16 @@ Prefab:
         type: 2}
       propertyPath: enableOneWayPlatforms
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648019678566788, guid: 2e4985331985d43999c2fc280d2438d8,
+        type: 2}
+      propertyPath: waterLayerMask.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648019678566788, guid: 2e4985331985d43999c2fc280d2438d8,
+        type: 2}
+      propertyPath: waterJumpHeight
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e4985331985d43999c2fc280d2438d8, type: 2}

@@ -60,9 +60,12 @@ public class PlatformerMotor2DEditor : Editor
 
     // Added by Qinye Li 2018-01-30
     private readonly Property WATER_SPEED = new Property("waterSpeed", "Water Speed");
-    private readonly Property WATER_SWIM_SPEED = new Property("waterSwimSpeed", "Water Swim Speed");
     private readonly Property TIME_TO_WATER_SPEED = new Property("timeToWaterSpeed", "Time to Water Speed");
     private readonly Property WATER_STOP_DISTANCE = new Property("waterStopDistance", "Water StopDistance");
+    private readonly Property WATER_GRAVITY_MULTIPLIER = new Property("waterGravityMultiplier", "Water Gravity Multiplier");
+    private readonly Property WATER_JUMP_HEIGHT = new Property("waterJumpHeight", "Water Jump Height");
+    private readonly Property WATER_FALL_SPEED = new Property("waterFallSpeed", "Water Fall Speed");
+    private readonly Property WATER_LAYER_MASK = new Property("waterLayerMask", "Water Layer Mask");
     // ----------------------------
 
     private readonly Property ENABLE_SLOPES = new Property("enableSlopes", "Enable Slopes");
@@ -212,9 +215,12 @@ public class PlatformerMotor2DEditor : Editor
         if (_showSwimming)
         {
             DisplayRegularField(WATER_SPEED);
-            DisplayRegularField(WATER_SWIM_SPEED);
             DisplayRegularField(TIME_TO_WATER_SPEED);
             DisplayRegularField(WATER_STOP_DISTANCE);
+            DisplayRegularField(WATER_GRAVITY_MULTIPLIER);
+            DisplayRegularField(WATER_JUMP_HEIGHT);
+            DisplayRegularField(WATER_FALL_SPEED);
+            DisplayRegularField(WATER_LAYER_MASK);
         }
         // ----------------------------
 

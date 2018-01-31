@@ -37,7 +37,11 @@ namespace PC2D
                                  _motor.motorState == PlatformerMotor2D.MotorState.FallingFast))
             {
                 _isJumping = true;
-                _animator.Play("Jump");
+                if (!_motor.isInWater) {
+                    _animator.Play("Jump");
+                } else {
+                    _animator.Play("Fall");
+                }
 
                 if (_motor.velocity.x <= -0.1f)
                 {
@@ -48,8 +52,12 @@ namespace PC2D
                     _currentFacingLeft = false;
                 }
 
-                Vector3 rotateDir = _currentFacingLeft ? Vector3.forward : Vector3.back;
-                visualChild.transform.Rotate(rotateDir, jumpRotationSpeed * Time.deltaTime);
+                if (_motor.isInWater) {
+                    visualChild.transform.rotation = Quaternion.identity;
+                } else {
+                    Vector3 rotateDir = _currentFacingLeft ? Vector3.forward : Vector3.back;
+                    visualChild.transform.Rotate(rotateDir, jumpRotationSpeed * Time.deltaTime);
+                }
             }
             else
             {

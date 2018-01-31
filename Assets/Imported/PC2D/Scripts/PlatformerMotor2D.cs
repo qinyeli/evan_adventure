@@ -54,6 +54,7 @@ public class PlatformerMotor2D : MonoBehaviour
     /// The maximum speed the motor will move on the ground, only effects horizontal speed.
     /// </summary>
     public float groundSpeed = 8f;
+    private float _defaultGroundSpeed;
 
     /// <summary>
     /// How much time does it take for the motor to get from zero speed to max speed. This value
@@ -72,6 +73,7 @@ public class PlatformerMotor2D : MonoBehaviour
     /// The maximum horizontal speed of the motor in the air.
     /// </summary>
     public float airSpeed = 5f;
+    private float _defaultAirSpeed;
 
     /// <summary>
     /// If true, then the player can change x direction while jumping. If false, then
@@ -84,22 +86,26 @@ public class PlatformerMotor2D : MonoBehaviour
     /// used to calculate the acceleration.
     /// </summary>
     public float timeToAirSpeed = 0.2f;
+    private float _defaultTimeToAirSpeed;
 
     /// <summary>
     /// The distance the motor will 'slide' to a stop while in the air. Only effects horizontal
     /// movement.
     /// </summary>
     public float airStopDistance = 2f;
+    private float _defaultAirtStopDistance;
 
     /// <summary>
     /// The maximum speed that the motor will fall. Only effects vertical speed when falling.
     /// </summary>
     public float fallSpeed = 16f;
+    private float _defaultFallSpeed;
 
     /// <summary>
     /// Gravity multiplier to the Physics2D.gravity setting. Works like RigidBody2D's gravityMultiplier.
     /// </summary>
     public float gravityMultiplier = 4;
+    private float _defaultGravityMultiplier;
 
     /// <summary>
     /// The maximum speed that the motor will fall during 'fast fall'.
@@ -116,6 +122,7 @@ public class PlatformerMotor2D : MonoBehaviour
     /// The height the motor will jump when a jump command is issued.
     /// </summary>
     public float jumpHeight = 1.5f;
+    private float _defaultJumpHeight;
 
     /// <summary>
     /// The extra height the motor will jump if jump is 'held' down.
@@ -138,10 +145,13 @@ public class PlatformerMotor2D : MonoBehaviour
     public float jumpWindowWhenActivated = 0.2f;
 
     // Added by Qinye Li 2018-01-30
+    public LayerMask waterLayerMask;
     public float waterSpeed = 3f;
-    public float waterSwimSpeed = 10f;
     public float timeToWaterSpeed = 1f;
     public float waterStopDistance = 1f;
+    public float waterGravityMultiplier = 1f;
+    public float waterJumpHeight = 1f;
+    public float waterFallSpeed = 1f;
     // ----------------------------
 
     /// <summary>
@@ -363,6 +373,10 @@ public class PlatformerMotor2D : MonoBehaviour
         Frozen,
         Slipping
     }
+
+    // Added by Qinye Li 2018-01-31
+    public bool isInWater = false;
+    // ----------------------------
 
     /// <summary>
     /// The surfaces the motor may be colliding against.
@@ -928,8 +942,15 @@ public class PlatformerMotor2D : MonoBehaviour
     private void Start()
     {
         // Added by Qinye Li 2018-01-30
+        _defaultGroundSpeed = groundSpeed;
         _defaultTimeToGroundSpeed = timeToGroundSpeed;
         _defaultGroundStopDistance = groundStopDistance;
+        _defaultAirSpeed = airSpeed;
+        _defaultTimeToAirSpeed = timeToAirSpeed;
+        _defaultAirtStopDistance = airStopDistance;
+        _defaultFallSpeed = fallSpeed;
+        _defaultGravityMultiplier = gravityMultiplier;
+        _defaultJumpHeight = jumpHeight;
         // ----------------------------
 
         _previousLoc = _collider2D.bounds.center;
@@ -1260,7 +1281,7 @@ public class PlatformerMotor2D : MonoBehaviour
         if (HasFlag(CollidedSurface.Ground))
         {
             PhysicsModifier physicsModifier = _collidersUpAgainst[DIRECTION_DOWN].gameObject.GetComponent<PhysicsModifier>();
-            if (physicsModifier != null) {
+            if (physicsModifier != null && !isInWater) { // Overwrite these values only when not in water!!
                 timeToGroundSpeed = physicsModifier.timeToGroundSpeed;
                 groundStopDistance = physicsModifier.groundStopDistance;
             } else {
@@ -1784,7 +1805,7 @@ public class PlatformerMotor2D : MonoBehaviour
             else if (_jumping.numAirJumps < numOfAirJumps)
             {
                 _velocity.y = CalculateSpeedNeeded(_jumping.height);
-                _jumping.numAirJumps++;
+                if (!isInWater) _jumping.numAirJumps++;
 
                 if (onAirJump != null)
                 {
@@ -1970,6 +1991,7 @@ public class PlatformerMotor2D : MonoBehaviour
         }
     }
 
+    // Modified by Qinye Li 2018-01-31
     private void HandleFalling()
     {
         // If we are falling fast then multiply the gravityMultiplier.
@@ -2717,6 +2739,35 @@ public class PlatformerMotor2D : MonoBehaviour
 
     private CollidedSurface CheckSurroundings(bool forceCheck)
     {
+        // Added by Qinye Li 2018-01-31
+        // Check water
+        RaycastHit2D waterHit = Physics2D.BoxCast(
+                    _collider2D.bounds.center,
+                    _collider2D.bounds.size,
+                    0f,
+                    Vector3.down,
+                    envCheckDistance,
+                    waterLayerMask);
+        isInWater = (waterHit.collider != null);
+        if (isInWater) {
+            groundSpeed = airSpeed = waterSpeed;
+            timeToGroundSpeed = timeToAirSpeed = timeToWaterSpeed;
+            groundStopDistance = airStopDistance = waterStopDistance;
+            fallSpeed = waterFallSpeed;
+            gravityMultiplier = waterGravityMultiplier;
+            jumpHeight = waterJumpHeight;
+        } else {
+            // Do not overwrite timeToGroundSpeed and groundStop Distance as they are modified by Physics Modifier
+            groundSpeed = _defaultGroundSpeed;
+            airSpeed = _defaultAirSpeed;
+            timeToAirSpeed = _defaultTimeToAirSpeed;
+            airStopDistance = _defaultAirtStopDistance;
+            fallSpeed = _defaultFallSpeed;
+            gravityMultiplier = _defaultGravityMultiplier;
+            jumpHeight = _defaultJumpHeight;
+        }
+        // ----------------------------
+
         CollidedSurface surfaces = CollidedSurface.None;
 
         Vector2 vecToCheck = _velocity;
