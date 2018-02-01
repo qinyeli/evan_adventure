@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: SnowHalfRuleTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 0639729801a0946d78a902375252f8a6, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: b4f646e2087094fc5abb7152d9d4c330, type: 3}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Neighbors: 0000000000000000000000000200000001000000000000000000000000000000
     m_Sprites:
-    - {fileID: 21300000, guid: 0d5aaf41784d04b86bda5bf90c308497, type: 3}
+    - {fileID: 21300000, guid: 6ed7bc37e5da34b08a6a8277db05c1e9, type: 3}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
     m_RuleTransform: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     m_RandomTransform: 0
   - m_Neighbors: 0000000000000000000000000100000001000000000000000000000000000000
     m_Sprites:
-    - {fileID: 21300000, guid: cead94e0d692f41aeb209928008d16f2, type: 3}
+    - {fileID: 21300000, guid: c66f7b1cbb45f401887bfde45d2bf9e2, type: 3}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
     m_RuleTransform: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     m_RandomTransform: 0
   - m_Neighbors: 0000000000000000000000000100000002000000000000000000000000000000
     m_Sprites:
-    - {fileID: 21300000, guid: 23c49d15e33b44b7f84714bb17d8284c, type: 3}
+    - {fileID: 21300000, guid: 5aefe3cf218124c8a8a9b9d24928612d, type: 3}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
     m_RuleTransform: 0
