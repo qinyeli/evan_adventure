@@ -29,6 +29,11 @@ public class BGMPlayer : MonoBehaviour {
 	[Range(0f, 1f)]
 	public float ambientVolume = 1f;
 
+	[Header("Ending Music Settings")]
+	public AudioClip endingAudioClip;
+	[Range(0f, 1f)]
+	public float endingVolume = 1;
+
 	AudioSource musicAudioSource;
 	AudioSource ambientAudioSource;
 
@@ -89,5 +94,16 @@ public class BGMPlayer : MonoBehaviour {
 			yield return null;
 		}
 		source.volume = finalVolume;
+	}
+
+	public void PlayEndingMusic() {
+		Mute(1f);
+		if (endingAudioClip != null) {
+			AudioSource endingAudioSource = gameObject.AddComponent<AudioSource> ();
+			endingAudioSource.clip = endingAudioClip;
+			endingAudioSource.loop = false;
+			endingAudioSource.volume = endingVolume;
+			endingAudioSource.Play();
+		}
 	}
 }
