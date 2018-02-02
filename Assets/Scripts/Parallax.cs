@@ -16,11 +16,12 @@ public class Parallax : MonoBehaviour {
 		cam = Camera.main.transform;
 		previousCamPos = cam.position;
 
-		backgrounds = GetComponentsInChildren<Transform>();
+		backgrounds = gameObject.GetComponentsInChildren<Transform>();
 		parallaxScales = new float[backgrounds.Length];
 		for (int i = 0 ; i < backgrounds.Length; i++) {
 			parallaxScales[i] = backgrounds[i].position.z;
 		}
+		print(backgrounds.Length);
 	}
 	
 	void Update() {
