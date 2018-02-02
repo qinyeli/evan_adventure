@@ -36,3 +36,6 @@ sysinfo.txt
 
 # macOS specific
 .DS_Store
+
+# Keep everything in docs/
+!/docs/*
