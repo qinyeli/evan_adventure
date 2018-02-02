@@ -52,6 +52,7 @@ public class AudioManager : MonoBehaviour {
 	public AudioClip endingAudioClip;
 	[Range(0f, 1f)]
 	public float endingVolume = 1;
+	bool endingMusicPlayed = false;
 
 	AudioSource musicAudioSource;
 	AudioSource ambientAudioSource;
@@ -131,13 +132,16 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void PlayEndingMusic() {
-		MuteBGM(1f);
-		if (endingAudioClip != null) {
-			AudioSource endingAudioSource = gameObject.AddComponent<AudioSource> ();
-			endingAudioSource.clip = endingAudioClip;
-			endingAudioSource.loop = false;
-			endingAudioSource.volume = endingVolume;
-			endingAudioSource.Play();
+		if (!endingMusicPlayed) {
+			MuteBGM(1f);
+			if (endingAudioClip != null) {
+				AudioSource endingAudioSource = gameObject.AddComponent<AudioSource> ();
+				endingAudioSource.clip = endingAudioClip;
+				endingAudioSource.loop = false;
+				endingAudioSource.volume = endingVolume;
+				endingAudioSource.Play();
+			}
 		}
+		endingMusicPlayed = true;
 	}
 }

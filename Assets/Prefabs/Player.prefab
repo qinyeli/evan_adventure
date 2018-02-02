@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4989016047809414}
   - component: {fileID: 61671902599588790}
   - component: {fileID: 114648019678566788}
+  - component: {fileID: 50549526816427354}
   - component: {fileID: 114425805228094728}
   - component: {fileID: 114590731968551856}
   - component: {fileID: 114367286412781754}
+  - component: {fileID: 210476022367503572}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -68,13 +70,33 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019508285177708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.789339, y: -2.2962441, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4894068267607882}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50549526816427354
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019508285177708}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61671902599588790
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -128,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c29e3d84bcf24a1d8906512148eb21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countCorn: 0
+  countFood: 0
 --- !u!114 &114425805228094728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,11 +189,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticEnvLayerMask:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 512
   envCheckDistance: 0.02
   minDistanceFromEnv: 0.01
   numOfIterations: 2
-  enableOneWayPlatforms: 1
+  enableOneWayPlatforms: 0
   movingPlatformLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -183,13 +207,22 @@ MonoBehaviour:
   airStopDistance: 2
   fallSpeed: 16
   gravityMultiplier: 2
-  fastFallSpeed: 32
-  fastFallGravityMultiplier: 4
+  fastFallSpeed: 16
+  fastFallGravityMultiplier: 2
   jumpHeight: 1.5
   extraJumpHeight: 1.5
   numOfAirJumps: 1
   jumpWindowWhenFalling: 0.2
   jumpWindowWhenActivated: 0.2
+  waterLayerMask:
+    serializedVersion: 2
+    m_Bits: 16
+  waterSpeed: 3
+  timeToWaterSpeed: 1
+  waterStopDistance: 1
+  waterGravityMultiplier: 1
+  waterJumpHeight: 1.5
+  waterFallSpeed: 1
   enableSlopes: 1
   angleAllowedForMoving: 80
   minimumSpeedToMoveUpSlipperySlope: 7.5
@@ -197,7 +230,7 @@ MonoBehaviour:
   speedMultiplierOnSlope: 0.75
   stickOnGround: 1
   distanceToCheckToStick: 0.5
-  enableWallJumps: 0
+  enableWallJumps: 1
   wallJumpMultiplier: 1
   wallJumpAngle: 70
   enableWallSticks: 0
@@ -221,6 +254,18 @@ MonoBehaviour:
   endDashNoGravityDuration: 0.1
   movingPlatformDebug: 0
   iterationDebug: 0
+  isInWater: 0
+  isOnIce: 0
+--- !u!210 &210476022367503572
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019508285177708}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!212 &212949260333400338
 SpriteRenderer:
   m_ObjectHideFlags: 1
