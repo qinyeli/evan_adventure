@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-	static GameManager instance;
+public class LevelManager : MonoBehaviour {
+	static LevelManager instance;
 
 	void Start() {
 		if (instance != null) {
