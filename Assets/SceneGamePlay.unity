@@ -9481,7 +9481,7 @@ Tilemap:
   - first: {x: 1, y: -2, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -9535,7 +9535,7 @@ Tilemap:
   - first: {x: 18, y: -2, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -9634,7 +9634,7 @@ Tilemap:
   - first: {x: 89, y: -2, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -11659,7 +11659,7 @@ Tilemap:
   - first: {x: 10, y: 1, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -11758,7 +11758,7 @@ Tilemap:
   - first: {x: 98, y: 1, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -13585,7 +13585,7 @@ Tilemap:
   - first: {x: 176, y: 3, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14017,7 +14017,7 @@ Tilemap:
   - first: {x: 92, y: 4, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -15286,7 +15286,7 @@ Tilemap:
   - first: {x: 102, y: 6, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -15358,7 +15358,7 @@ Tilemap:
   - first: {x: 140, y: 6, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -15511,7 +15511,7 @@ Tilemap:
   - first: {x: 183, y: 6, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -15880,7 +15880,7 @@ Tilemap:
   - first: {x: 38, y: 7, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -17392,7 +17392,7 @@ Tilemap:
   - first: {x: 49, y: 10, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -17743,7 +17743,7 @@ Tilemap:
   - first: {x: 219, y: 10, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -18895,7 +18895,7 @@ Tilemap:
   - first: {x: 55, y: 13, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -19480,7 +19480,7 @@ Tilemap:
   - first: {x: 205, y: 14, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -23089,14 +23089,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 15
+    m_Data: {fileID: 21300000, guid: 39caa0af32bf74ce3bdfe991ec1b9f75, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 15
-    m_Data: {fileID: 21300000, guid: 313633c489c344f968c93c235fa57ebf, type: 3}
   - m_RefCount: 2055
     m_Data: {fileID: 21300000, guid: 12be69472bd0d478887fe1cc26e2301e, type: 3}
   - m_RefCount: 20
-    m_Data: {fileID: 21300000, guid: 3890c7e6e7f2c4e46b4d9ca2ec46228b, type: 3}
+    m_Data: {fileID: 21300000, guid: 3841c168f4cc745429c135bb5da39c90, type: 3}
   - m_RefCount: 434
     m_Data: {fileID: 21300000, guid: 4221966526082470cb5c72f0d2ee7180, type: 3}
   m_TileMatrixArray:
@@ -23273,7 +23273,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -23296,7 +23296,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 465444099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50670,7 +50670,7 @@ GameObject:
   - component: {fileID: 875975775}
   m_Layer: 9
   m_Name: Ice
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54831,6 +54831,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: SoundEffects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: SoundEffectsSettings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4312282423606554, guid: eb7b08adce1d843b891c5e1b7b0d9dea, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54863,6 +54878,75 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1446729854568762, guid: eb7b08adce1d843b891c5e1b7b0d9dea, type: 2}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: jumpAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b35cdc814e5a24efa9261dc0c3eba5b2, type: 3}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: musicAudioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: SoundEffectsSettings.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b35cdc814e5a24efa9261dc0c3eba5b2, type: 3}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: SoundEffectsSettings.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b35cdc814e5a24efa9261dc0c3eba5b2, type: 3}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[0].volume
+      value: 0.902
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[1].name
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[2].name
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e14382cc3b0d343d6a2db00923ea253a, type: 3}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[2].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b88e0ef154b442d8902527c93352243, type: 3}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[1].volume
+      value: 0.869
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[3].name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114214734585156022, guid: eb7b08adce1d843b891c5e1b7b0d9dea,
+        type: 2}
+      propertyPath: soundEffectsSettings.Array.data[3].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f32dd4e67783e4e248046a77fd9121b2, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb7b08adce1d843b891c5e1b7b0d9dea, type: 2}
   m_IsPrefabParent: 0
@@ -55074,7 +55158,7 @@ GameObject:
   - component: {fileID: 1275076674}
   - component: {fileID: 1275076673}
   m_Layer: 0
-  m_Name: BGMPlayer
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55089,7 +55173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1275076672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10fce2e7a256409e9abca5c04d2b5fa, type: 3}
+  m_Script: {fileID: 11500000, guid: e9fd4e46ed60a4299a90dc7ee07eada2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicAudioClip: {fileID: 0}
@@ -55098,6 +55182,21 @@ MonoBehaviour:
   ambientAudioClip: {fileID: 0}
   ambientPlayOnAwake: 1
   ambientVolume: 1
+  soundEffectsSettings:
+  - name: 0
+    audioClip: {fileID: 8300000, guid: b35cdc814e5a24efa9261dc0c3eba5b2, type: 3}
+    volume: 0.902
+  - name: 2
+    audioClip: {fileID: 8300000, guid: e14382cc3b0d343d6a2db00923ea253a, type: 3}
+    volume: 0.869
+  - name: 3
+    audioClip: {fileID: 8300000, guid: 3b88e0ef154b442d8902527c93352243, type: 3}
+    volume: 1
+  - name: 1
+    audioClip: {fileID: 8300000, guid: f32dd4e67783e4e248046a77fd9121b2, type: 3}
+    volume: 1
+  endingAudioClip: {fileID: 0}
+  endingVolume: 1
 --- !u!4 &1275076674
 Transform:
   m_ObjectHideFlags: 0
@@ -55447,6 +55546,16 @@ Prefab:
         type: 2}
       propertyPath: enableWallSticks
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648019678566788, guid: 2e4985331985d43999c2fc280d2438d8,
+        type: 2}
+      propertyPath: fastFallGravityMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648019678566788, guid: 2e4985331985d43999c2fc280d2438d8,
+        type: 2}
+      propertyPath: fastFallSpeed
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e4985331985d43999c2fc280d2438d8, type: 2}

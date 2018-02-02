@@ -376,6 +376,7 @@ public class PlatformerMotor2D : MonoBehaviour
 
     // Added by Qinye Li 2018-01-31
     public bool isInWater = false;
+    public bool isOnIce = false;
     // ----------------------------
 
     /// <summary>
@@ -1287,6 +1288,12 @@ public class PlatformerMotor2D : MonoBehaviour
             } else {
                 timeToGroundSpeed = _defaultTimeToGroundSpeed;
                 groundStopDistance = _defaultGroundStopDistance;
+            }
+
+            if (_collidersUpAgainst[DIRECTION_DOWN].gameObject.tag == "Ice") {
+                isOnIce = true;
+            } else {
+                isOnIce = false; // Note: this is not updated when player jumps
             }
         }
         // ----------------------------

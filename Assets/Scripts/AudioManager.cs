@@ -4,13 +4,13 @@ using System.Diagnostics.SymbolStore;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class BGMPlayer : MonoBehaviour {
-	static BGMPlayer instance;
-	public static BGMPlayer Instance {
+public class AudioManager : MonoBehaviour {
+	static AudioManager instance;
+	public static AudioManager Instance {
 		get {
 			if (instance == null) {
 				GameObject go = new GameObject("BGMPlayer");
-				instance = go.AddComponent<BGMPlayer>();
+				instance = go.AddComponent<AudioManager>();
 				return instance;
 			}
 			return instance;
@@ -28,6 +28,25 @@ public class BGMPlayer : MonoBehaviour {
 	public bool ambientPlayOnAwake = true;
 	[Range(0f, 1f)]
 	public float ambientVolume = 1f;
+
+	[Header("Sound Effect Settings")]
+	public SFXInfo[] soundEffectsSettings;
+	Dictionary<SFXName, SFXInfo> soundEffects;
+
+	public enum SFXName {
+		Jump,
+		GetItem,
+		JumpIntoWater,
+		JumpOntoIce
+	}
+
+	[System.Serializable]
+	public class SFXInfo {
+		public SFXName name;
+		public AudioClip audioClip;
+		[Range(0f, 1f)]
+		public float volume = 1f;
+	}
 
 	[Header("Ending Music Settings")]
 	public AudioClip endingAudioClip;
@@ -60,30 +79,45 @@ public class BGMPlayer : MonoBehaviour {
 			ambientAudioSource.volume = ambientVolume;
 			if (ambientPlayOnAwake) ambientAudioSource.Play();
 		}
+
+		soundEffects = new Dictionary<SFXName, SFXInfo>();
+		for (int i = 0; i < soundEffectsSettings.Length; i++) {
+			soundEffects.Add(soundEffectsSettings[i].name, soundEffectsSettings[i]);
+		}
 	}
 
-	public void Play() {
+	public void PlayBGM() {
 		if (musicAudioSource != null) musicAudioSource.Play();
 		if (ambientAudioSource != null) ambientAudioSource.Play();
 	}
 
-	public void Stop() {
+	public void StopBGM() {
 		if (musicAudioSource != null) musicAudioSource.Stop();
 		if (ambientAudioSource != null) ambientAudioSource.Stop();
 	}
 
-	public void Mute(float fadeTime) {
+	public void MuteBGM(float fadeTime) {
 		if (musicAudioSource != null)
 			StartCoroutine(VolumeFade(musicAudioSource, 0f, fadeTime));
 		if (ambientAudioSource != null)
 			StartCoroutine(VolumeFade(ambientAudioSource, 0f, fadeTime));
 	}
 
-	public void Unmute(float fadeTime) {
+	public void UnmuteBGM(float fadeTime) {
 		if (musicAudioSource != null)
 			StartCoroutine(VolumeFade(musicAudioSource, 0f, fadeTime));
 		if (ambientAudioSource != null)
 			StartCoroutine(VolumeFade(ambientAudioSource, 0f, fadeTime));
+	}
+
+	public void PlaySFX(SFXName name) {
+		if (!soundEffects.ContainsKey(name)) return;
+		AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+		audioSource.clip = soundEffects[name].audioClip;
+		audioSource.loop = false;
+		audioSource.volume = soundEffects[name].volume;
+		audioSource.Play();
+		Destroy (audioSource, audioSource.clip.length);
 	}
 
 	IEnumerator VolumeFade (AudioSource source, float finalVolume, float fadeTime) {
@@ -97,7 +131,7 @@ public class BGMPlayer : MonoBehaviour {
 	}
 
 	public void PlayEndingMusic() {
-		Mute(1f);
+		MuteBGM(1f);
 		if (endingAudioClip != null) {
 			AudioSource endingAudioSource = gameObject.AddComponent<AudioSource> ();
 			endingAudioSource.clip = endingAudioClip;

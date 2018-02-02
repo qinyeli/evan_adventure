@@ -31,6 +31,7 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetButtonDown(PC2D.Input.JUMP))
         {
             _motor.Jump();
+            AudioManager.Instance.PlaySFX(AudioManager.SFXName.Jump);
         }
 
         _motor.jumpingHeld = Input.GetButton(PC2D.Input.JUMP);
